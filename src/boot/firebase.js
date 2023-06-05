@@ -1,7 +1,13 @@
 import { initializeApp } from 'firebase/app';
 
-// Importacao dos metodos que serao utilizados
-import { getAuth } from "firebase/auth";
+import { getAuth,
+    signInWithPopup,
+    GoogleAuthProvider,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut,
+} from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: "AIzaSyARCkL2HMGWa4LDqxPRxH91MxQ_hd2eXn0",
@@ -16,5 +22,11 @@ const app = initializeApp(firebaseConfig);
 
 // Exportando os metodos para uso externo
 export const auth = getAuth(app);
-
+export const provider = new GoogleAuthProvider();
+export const SDKGoogleAuthProvider = GoogleAuthProvider
+export const handleSignInWithPopup = signInWithPopup;
+export const handleCreateUserWithEmailAndPassword = createUserWithEmailAndPassword;
+export const handleSignInWithEmailAndPassword = signInWithEmailAndPassword;
+export const handleOnAuthStateChanged = onAuthStateChanged;
+export const handleSignOut = signOut;
 
