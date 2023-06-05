@@ -2,20 +2,39 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+        <!--<q-btn flat round dense icon="menu" class="q-mr-sm" />-->
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
+        <q-toolbar-title>30s Auth</q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <q-btn flat round dense>
+          <q-avatar>
+            <img src="https://avatars.githubusercontent.com/u/18400142?v=4">
+          </q-avatar>
+          <q-menu>
+            <q-list style="min-width: 180px">
+
+              <q-item to="/" exact clickable v-close-popup>
+                <q-item-section>Página Inicial</q-item-section>
+              </q-item>
+
+              <q-item to="/google-auth" exact clickable v-close-popup>
+                <q-item-section>Google Auth</q-item-section>
+              </q-item>
+
+              <q-item to="/profile" exact clickable v-close-popup>
+                <q-item-section>Perfil</q-item-section>
+              </q-item>
+              <q-separator />
+
+              <q-item clickable exact v-close-popup class="text-negative">
+                <q-item-section>Logout</q-item-section>
+              </q-item>
+
+            </q-list>
+          </q-menu>
+        </q-btn>
+
+
       </q-toolbar>
     </q-header>
 
